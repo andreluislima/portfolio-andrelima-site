@@ -1,0 +1,95 @@
+<form class="form" id="contactForm" #form="ngForm" data-sb-form-api-token="API_TOKEN" (ngSubmit)="submitForm(form)">
+
+  <!-- Name input -->
+  <div class="form-floating mb-3">
+    <input 
+      class="form-control" 
+      id="name" 
+      type="text" 
+      placeholder="Enter your name..." 
+      name="nome" 
+      [(ngModel)]="mensagem.name" 
+      required 
+      #nomeInput="ngModel"
+      minlength="2"
+    />
+    <div *ngIf="nomeInput.invalid && nomeInput.touched" class="text-danger mx-2 mt-1 small">
+      <div *ngIf="nomeInput.errors?.['required']">  O nome é obrigatório! </div>
+      <div *ngIf="nomeInput.errors?.['minlength']">  O nome deve ter ao menos 2 letras.</div>
+    </div>
+
+    <label for="name">Nome</label>
+    
+  </div>
+
+  <!-- Email input -->
+  <div class="form-floating mb-3">
+  <input 
+    class="form-control" 
+    id="email" 
+    type="email" 
+    placeholder="name@example.com" 
+    name="email" 
+    [(ngModel)]="mensagem.email" 
+    required 
+    #emailInput="ngModel"
+    pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+  />
+  <label for="email">E-mail</label>
+
+  <div *ngIf="emailInput.invalid && emailInput.touched" class="text-danger mx-2 mt-1 small">
+    <div *ngIf="emailInput.errors?.['required']">
+      O e-mail é obrigatório!
+    </div>
+    <div *ngIf="emailInput.errors?.['pattern']">
+      Formato de e-mail inválido!
+    </div>
+  </div>
+</div>
+
+  <!-- Phone input -->
+  <div class="form-floating mb-3">
+    <input 
+      class="form-control" 
+      id="phone" 
+      type="tel" 
+      placeholder="(123) 456-7890" 
+      name="phone" 
+      [(ngModel)]="mensagem.phone"
+      mask="(00)0000-00000"
+      #phoneInput="ngModel"
+    />
+    <label for="phone">Celular</label>
+  </div>
+
+  <!-- Message input -->
+  <div class="form-floating mb-3">
+    <textarea 
+      class="form-control" 
+      id="message" 
+      placeholder="Enter your message here..." 
+      style="height: 10rem"
+      name="message" 
+      [(ngModel)]="mensagem.message" 
+      required 
+      #messageInput="ngModel"
+    ></textarea>
+    <label for="message">Mensagem</label>
+    <div *ngIf="messageInput.invalid && messageInput.touched" class="text-danger mx-2 mt-1 small">
+      A Mensagem é obrigatória!
+    </div>
+  </div>
+
+  <!-- Submit button -->
+  <div class="d-grid mb-4">
+    <button 
+      class="btn btn-lg" 
+      id="submitButton" 
+      type="submit"
+      [disabled]="form.invalid"
+    >
+      Enviar
+    </button>
+  </div>
+
+</form>

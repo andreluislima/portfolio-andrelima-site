@@ -1,0 +1,46 @@
+@use "../../styles/variables.scss" as *;
+
+.container{
+    .title-session{
+        text-transform: uppercase;
+        background: linear-gradient(90deg, rgb(4, 0, 255), orange, rgb(230, 230, 230));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-align: center;
+    }
+
+    h2{
+        font-size: 2rem;
+    }
+
+    .card-content-text{
+        border-left: 3px solid $second-color;
+        
+    }
+
+    .badge {
+        background: linear-gradient(270deg, rgb(199, 196, 196), rgb(4, 0, 255));
+    }
+
+ 
+
+    a{
+        text-decoration: none;
+        // border: 2px solid;
+        display: flex;
+        align-items: center;
+    }
+
+    img{
+        max-width: 800px;
+        border-radius: 8px;
+        box-shadow: 2px 5px 4px rgb(196, 195, 195);
+    }
+
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+    img{
+        width: 100%;
+    }
+}

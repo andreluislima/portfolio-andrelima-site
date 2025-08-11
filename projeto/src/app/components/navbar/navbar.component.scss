@@ -1,0 +1,51 @@
+@use "../../styles/variables.scss" as *;
+
+.navbar{
+    // border: 2px solid red;
+    background-color: #d9d9d9;
+    padding: 0;
+
+    .active-link {
+        color: #ff9900;  
+        font-weight: bold;
+        border-bottom: 2px solid $third-color;  
+        // border-width: 10px;
+
+    }
+    ul{
+    // border: 2px solid red;
+
+        li{
+
+           a{
+                color: $fourth-color;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 1.2rem;
+                color: #000;
+                text-transform: capitalize;
+                // padding: 10px;
+           } 
+
+           a:hover{
+            color:#fff;
+           }
+        }
+    }
+}
+
+
+@media (min-width: 320px) and (max-width: 768px) {
+
+    ul li a {
+        display: block;       // Faz o link ocupar a largura total
+        padding: 10px 20px;   // Espaçamento interno (ajuste conforme o layout)
+    }
+
+    .active-link {
+        font-weight: bold;
+        background-color: #eeb30d;
+        color: #000;          // Se quiser, mude a cor do texto
+    }
+
+}

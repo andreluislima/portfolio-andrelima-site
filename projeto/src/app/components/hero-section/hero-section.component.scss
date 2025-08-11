@@ -1,0 +1,97 @@
+@use "../../styles/variables.scss" as *;
+
+.hero-section {
+  display: flex;
+  justify-content: center;
+  background-color: $five-color;
+  padding: 5px;
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+
+    &-title {
+      width: 50%;
+      background: linear-gradient(90deg, rgb(4, 0, 255), orange, rgb(230, 230, 230));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    &-description {
+      width: 50%;
+      color: #6c757d;
+      // text-align: start;
+      font-size: 1.1rem;
+ 
+      .pre-desc {
+        font-weight: 600;
+      }
+    }
+
+    &-social-media {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+
+      img {
+        width: 40px;
+      }
+    }
+  }
+}
+
+/* Responsivo: tablets e desktops médios */
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .hero-section {
+    .hero-area {
+      .col-lg-6 {
+        width: 80% !important; // use com cautela para sobrescrever Bootstrap
+        background-color: blue;
+      }
+
+      .hero-social-media {
+        justify-content: center;
+
+        img {
+          width: 40px;
+        }
+      }
+    }
+  }
+}
+
+/* Responsivo: celulares */
+@media (min-width: 320px) and (max-width: 768px) {
+  .hero-section {
+    // border: 2px solid red;
+    h2{
+      font-size: 2.2rem;
+    }
+    .hero {
+      // border: 2px solid;
+      // width: 300%;
+      // width: 300px;
+        &-title,
+        &-description {
+      // border: 2px solid red;
+        width: 100%; // reduzido para caber bem no mobile
+      }
+
+      .description{
+        // background-color: red;
+        // width: 230px;
+        margin-top: 20px;
+        margin-bottom: 40px;
+      }
+
+      &-social-media img {
+        width: 35px;
+      }
+    }
+  }
+}
