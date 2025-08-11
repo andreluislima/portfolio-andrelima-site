@@ -18,7 +18,7 @@
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "dist/projeto",
-            "baseHref": "/portifolio_andrelima/",
+            "baseHref": "/portfolio-andrelima-site/",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
